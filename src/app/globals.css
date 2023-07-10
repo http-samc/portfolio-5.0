@@ -27,7 +27,7 @@
     --card: 220 14% 96%;
     --card-foreground: 222.2 84% 4.9%;
 
-    --border: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 85%;
     --input: 214.3 31.8% 91.4%;
 
     --primary: 222.2 47.4% 11.2%;
@@ -81,9 +81,9 @@
 
     --ring: 217.2 32.6% 17.5%;
 
-    --brand-gradient-from: 327 87% 82%;
+    --brand-gradient-from: 327 87% 72%;
     --brand-gradient-via: 269 97% 85%;
-    --brand-gradient-to: 234 89% 74%;
+    --brand-gradient-to: 234 89% 64%;
   }
 }
 

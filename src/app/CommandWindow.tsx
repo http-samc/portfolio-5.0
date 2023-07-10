@@ -10,10 +10,10 @@ import CommandBlock from "./CommandBlock";
 
 const CommandWindow = () => {
   return (
-    <div className="w-full relative group">
+    <div className="w-full relative group overflow-hidden rounded-lg">
       <div className="absolute flex justify-center items-center w-full h-full">
-        <div className="absolute -z-10 bg-card rounded-lg w-full h-full group-hover:h-[calc(100%-4px)] group-hover:w-[calc(100%-4px)]" />
-        <div className="absolute -z-20 brand-gradient-bg rounded-lg h-[calc(100%-2px)] w-[calc(100%-2px)]" />
+        <div className="absolute -z-10 bg-card rounded-lg h-[calc(100%-2px)] w-[calc(100%-2px)]" />
+        <div className="absolute -z-20 brand-gradient-bg rounded-lg h-[calc(100%-4px)] w-[calc(100%-4px)] scale-105 md:scale-100 md:group-hover:scale-105 md:transition-all md:duration-700 md:ease-in-out" />
       </div>
       <div className="absolute flex justify-center items-center w-full h-full"></div>
       <div className="flex flex-col space-x-2 space-y-2 px-2 pt-2 pb-4 rounded-lg">
@@ -22,20 +22,20 @@ const CommandWindow = () => {
             <div className="w-3 h-3 bg-red-400 active:bg-red-300 cursor-pointer rounded-full flex justify-center items-center">
               <XIcon
                 size={10}
-                className="text-transparent group-hover:text-red-950"
+                className="text-red-950 md:sm:text-transparent rotate-180 md:group-hover:text-red-950 md:transition-all md:delay-300"
               />
             </div>
             <div className="w-3 h-3 bg-yellow-500 active:bg-yellow-300 cursor-pointer rounded-full flex justify-center items-center">
               <MinusIcon
                 size={10}
-                className="text-transparent group-hover:text-yellow-950"
+                className="text-yellow-950 md:text-transparent rotate-180 md:group-hover:text-yellow-950 md:transition-all md:delay-300"
               />
             </div>
             <div className="w-3 h-3 bg-green-500 active:bg-green-400 cursor-pointer rounded-full flex justify-center items-center">
               <Maximize2Icon
                 size={7}
                 fontWeight={900}
-                className="text-transparent rotate-90 group-hover:text-yellow-950"
+                className="text-green-950 md:text-transparent rotate-90 md:group-hover:text-green-950 md:transition-all md:delay-300"
               />
             </div>
           </div>
@@ -46,7 +46,7 @@ const CommandWindow = () => {
             <p className="select-none">1</p>
           </div>
         </div>
-        {<CommandBlock title="foo" text="bar" />}
+        {<CommandBlock title="foo" text="hello, world" />}
       </div>
     </div>
   );

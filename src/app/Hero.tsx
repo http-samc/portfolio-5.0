@@ -23,7 +23,8 @@ const Hero = () => {
         </h3>
       </div>
       <div className="flex justify-center">
-        <div className="w-44 h-44 p-4 rounded-full overflow-hidden brand-gradient-bg">
+        <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">
+          <div className="absolute w-full h-full brand-gradient-bg -z-10 top-0 left-0 group-hover:scale-150 transition-all"></div>
           <Image
             className="w-44 h-44 object-cover"
             src={Headshot}

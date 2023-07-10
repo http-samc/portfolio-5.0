@@ -1,3 +1,4 @@
+import ParticleCanvas from "@/components/ParticleCanvas";
 import Footer from "./Footer";
 import Header from "./Header";
 import Providers from "./Providers";
@@ -18,11 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${red_hat_display.variable} ${roboto_mono.variable} max-w-[800px] mx-auto`}
-      >
+      <body className={`${red_hat_display.variable} ${roboto_mono.variable}`}>
+        <ParticleCanvas />
         <Providers>
-          <main className="h-screen flex flex-col justify-between">
+          <main className="min-h-screen flex flex-col justify-between max-w-[800px] mx-auto">
             <Header />
             <section className="h-full mt-14 p-6">{children}</section>
             <Footer />

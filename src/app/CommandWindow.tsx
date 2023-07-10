@@ -10,7 +10,7 @@ import CommandBlock from "./CommandBlock";
 
 const CommandWindow = () => {
   return (
-    <div className="w-full flex flex-col space-x-2 space-y-2 p-2 rounded-lg bg-gray-100 dark:bg-slate-900">
+    <div className="w-full flex flex-col space-x-2 space-y-2 px-2 pt-2 pb-4 rounded-lg bg-card">
       <div className="text-sm text-gray-600 dark:text-gray-400 w-full flex justify-between">
         <div className="flex space-x-1.5 group pl-1 w-20 mt-1">
           <div className="w-3 h-3 bg-red-400 active:bg-red-300 cursor-pointer rounded-full flex justify-center items-center">
@@ -33,7 +33,7 @@ const CommandWindow = () => {
             />
           </div>
         </div>
-        <p className="font-mono select-none">{"smrth's macbook"}</p>
+        <p className="font-mono select-none">{"smrth's mac"}</p>
         <div className="flex items-center space-x-0.5 justify-end mr-1 w-20">
           <OptionIcon size={12} />
           <CommandIcon size={12} />

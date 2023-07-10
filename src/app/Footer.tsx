@@ -6,9 +6,7 @@ const Footer = () => {
       <p className="italic">
         made with <span className="not-italic">💙</span> &{" "}
         <span className="not-italic">☕️</span> by{" "}
-        <span className="font-mono not-italic bg-clip-text text-transparent brand-gradient">
-          smrth
-        </span>
+        <span className="brand-gradient-text">smrth</span>
       </p>
     </footer>
   );

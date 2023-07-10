@@ -8,12 +8,12 @@ interface CommandBlockProps {
 
 const CommandBlock = ({ title, text }: CommandBlockProps) => {
   return (
-    <div className="flex flex-col space-x-2">
-      <h4 className="flex items-center space-x-2">
+    <div className="flex flex-col space-y-1.5">
+      <h4 className="flex items-center space-x-1">
         <ChevronRightIcon size={16} />
         <span className="font-mono">{title}</span>
       </h4>
-      <p className="px-4">{text}</p>
+      <p className="pl-1">{text}</p>
     </div>
   );
 };

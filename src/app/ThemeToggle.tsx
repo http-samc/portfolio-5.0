@@ -8,14 +8,12 @@ import { MoonIcon, SunIcon } from "lucide-react";
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
 
-  console.log(theme);
-
   return (
     <Button
       size="icon"
       variant="outline"
       className="rounded-full"
-      onClick={() => setTheme("light")}
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? <SunIcon size={16} /> : <MoonIcon size={16} />}
     </Button>

@@ -21,13 +21,13 @@ export default function RootLayout({
       <body
         className={`${red_hat_display.variable} ${roboto_mono.variable} max-w-[800px] mx-auto`}
       >
-        <main className="h-screen flex flex-col justify-between">
-          <Header />
-          <section className="h-full mt-14 p-6">
-            <Providers>{children}</Providers>
-          </section>
-          <Footer />
-        </main>
+        <Providers>
+          <main className="h-screen flex flex-col justify-between">
+            <Header />
+            <section className="h-full mt-14 p-6">{children}</section>
+            <Footer />
+          </main>
+        </Providers>
       </body>
     </html>
   );

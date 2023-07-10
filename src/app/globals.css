@@ -3,9 +3,14 @@
 @tailwind utilities;
 
 @layer components {
-  .brand-gradient {
-    @apply bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400;
+  .brand-gradient-bg {
+    @apply bg-gradient-to-r from-brand-gradient-from via-brand-gradient-via to-brand-gradient-to;
   }
+
+  .brand-gradient-text {
+    @apply font-mono not-italic bg-clip-text text-transparent brand-gradient-bg font-extrabold
+  }
+
 }
 
 @layer base {
@@ -16,10 +21,10 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --popover: 0 0% 100%;
+    --popover: 220 14% 96%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
+    --card: 220 14% 96%;
     --card-foreground: 222.2 84% 4.9%;
 
     --border: 214.3 31.8% 91.4%;
@@ -40,6 +45,10 @@
     --ring: 215 20.2% 65.1%;
 
     --radius: 0.5rem;
+
+    --brand-gradient-from: 327 95% 75%;
+    --brand-gradient-via: 269 97% 70%;
+    --brand-gradient-to: 234 95% 70%;
   }
 
   .dark {
@@ -49,10 +58,10 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 222 47% 11%;
     --card-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
@@ -71,6 +80,10 @@
     --destructive-foreground: 0 85.7% 97.3%;
 
     --ring: 217.2 32.6% 17.5%;
+
+    --brand-gradient-from: 327 87% 82%;
+    --brand-gradient-via: 269 97% 85%;
+    --brand-gradient-to: 234 89% 74%;
   }
 }
 

@@ -18,7 +18,7 @@ const Hero = () => {
         </h3>
       </div>
       <div className="flex justify-center">
-        <div className="w-44 h-44 p-4 rounded-full overflow-hidden brand-gradient">
+        <div className="w-44 h-44 p-4 rounded-full overflow-hidden brand-gradient-bg">
           <Image
             className="w-44 h-44 object-cover"
             src={Headshot}

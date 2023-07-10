@@ -21,6 +21,9 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "brand-gradient-from": "hsl(var(--brand-gradient-from))",
+        "brand-gradient-via": "hsl(var(--brand-gradient-via))",
+        "brand-gradient-to": "hsl(var(--brand-gradient-to))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

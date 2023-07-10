@@ -18,8 +18,10 @@ const Hero = () => {
           </Balancer>
         </h2>
         <h3 className="md:max-w-[40ch] text-lg sm:text-base mt-4 italic">
-          Full stack developer. Coding to make the world a better place and
-          building awesome stuff along the way.
+          <Balancer>
+            Full stack developer. Coding to make the world a better place and
+            building awesome stuff along the way.
+          </Balancer>
         </h3>
       </div>
       <div className="flex justify-center">

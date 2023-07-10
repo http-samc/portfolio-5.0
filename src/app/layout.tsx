@@ -9,7 +9,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "smrth.dev",
   description:
-    "(Samarth Chitgopekar || smrth || http-samc || OVO Sam)'s personal site.",
+    "I'm Samarth Chitgopekar, a full stack developer coding to make the world a better place and building awesome stuff along the way.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

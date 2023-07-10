@@ -16,7 +16,7 @@ const Particles = {
   particleArray: [],
   mouse: { x: undefined, y: undefined },
   hoverRadius: 100,
-  radius: 0.1,
+  radius: 0.01,
 
   init: function () {
     this.canvas = document.getElementById("particles");

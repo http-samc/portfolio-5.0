@@ -2,8 +2,8 @@ import ParticleCanvas from "@/components/ParticleCanvas";
 import Footer from "./Footer";
 import Header from "./Header";
 import Providers from "./Providers";
-import { red_hat_display, roboto_mono } from "./fonts";
-import "./globals.css";
+import { red_hat_display, roboto_mono } from "@/lib/fonts";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

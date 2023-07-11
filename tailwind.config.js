@@ -53,10 +53,11 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      // fontFamily: {
-      //   sans: "var(--font-red_hat_display)",
-      //   mono: "var(--font-roboto_mono)",
-      // },
+      fontFamily: {
+        // sans: "var(--font-red_hat_display)",
+        mono: "var(--font-roboto_mono)",
+        playful: "var(--font-permanent_marker",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

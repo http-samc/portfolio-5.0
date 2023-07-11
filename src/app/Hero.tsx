@@ -9,7 +9,11 @@ const Hero = () => {
     <div className="flex flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8">
       <div className="sm:w-4/5">
         <h1 className="text-5xl sm:text-4xl font-extrabold">
-          <Balancer>{"I'm"} Samarth Chitgopekar</Balancer>
+          <Balancer>
+            {"I'm "}
+            <span className="brand-gradient-text font-sans">Sam</span>
+            arth Chitgopekar
+          </Balancer>
         </h1>
         <h2 className="text-3xl sm:text-2xl mt-2">
           <Balancer>

@@ -15,7 +15,11 @@ const ThemeButton = () => {
       className="rounded-full hidden md:flex"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      {theme === "dark" ? <SunIcon size={16} /> : <MoonIcon size={16} />}
+      {!theme || theme === "dark" ? (
+        <SunIcon size={16} />
+      ) : (
+        <MoonIcon size={16} />
+      )}
     </Button>
   );
 };

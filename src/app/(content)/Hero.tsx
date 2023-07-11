@@ -1,5 +1,5 @@
 import React from "react";
-import Headshot from "../../public/headshot.png";
+import Headshot from "../../../public/headshot.png";
 import { MapPinIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";

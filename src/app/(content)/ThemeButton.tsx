@@ -12,7 +12,7 @@ const ThemeButton = () => {
     <Button
       size="icon"
       variant="outline"
-      className="rounded-full hidden md:flex"
+      className="rounded-full mx-auto"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {!theme || theme === "dark" ? (

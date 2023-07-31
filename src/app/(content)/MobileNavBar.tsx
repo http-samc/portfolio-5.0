@@ -8,7 +8,9 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, PencilIcon } from "lucide-react";
+import ThemeButton from "./ThemeButton";
+import NavLink from "./NavLink";
 
 const MobileNavBar = () => {
   return (
@@ -18,14 +20,16 @@ const MobileNavBar = () => {
           <MenuIcon />
         </Button>
       </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Are you sure absolutely sure?</SheetTitle>
-          <SheetDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </SheetDescription>
-        </SheetHeader>
+      <SheetContent className="w-48 flex flex-col justify-between">
+        <div className="flex flex-col">
+          <NavLink
+            text="Blog"
+            icon={<PencilIcon className="w-4 h-4" />}
+            href="#"
+          />
+        </div>
+        <div className=""></div>
+        <ThemeButton />
       </SheetContent>
     </Sheet>
   );

@@ -12,7 +12,7 @@ const CommandWindow = () => {
   return (
     <div className="w-full relative group overflow-hidden rounded-lg">
       <div className="absolute flex justify-center items-center w-full h-full">
-        <div className="absolute -z-10 bg-card rounded-lg h-[calc(100%-2px)] w-[calc(100%-2px)]" />
+        <div className="absolute -z-10 bg-card opacity-80 backdrop-blur-2xl rounded-lg h-[calc(100%-2px)] w-[calc(100%-2px)]" />
         <div className="absolute -z-20 brand-gradient-bg rounded-lg h-[calc(100%-4px)] w-[calc(100%-4px)] scale-105 md:scale-100 md:group-hover:scale-105 md:transition-all md:duration-700 md:ease-in-out" />
       </div>
       <div className="absolute flex justify-center items-center w-full h-full"></div>

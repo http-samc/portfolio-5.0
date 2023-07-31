@@ -3,10 +3,11 @@ import Headshot from "../../../public/headshot.png";
 import { MapPinIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
+import DotGrid from "@/components/DotGrid";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8">
+    <div className="flex flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
       <div className="sm:w-4/5">
         <h1 className="text-5xl sm:text-4xl font-extrabold">
           <Balancer>
@@ -41,6 +42,7 @@ const Hero = () => {
           />
         </div>
       </div>
+      <DotGrid />
     </div>
   );
 };

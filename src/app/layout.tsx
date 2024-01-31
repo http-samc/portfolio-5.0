@@ -1,4 +1,4 @@
-import { red_hat_display, roboto_mono } from "@/lib/fonts";
+import { red_hat_display, roboto_mono, unifraktur_cook } from "@/lib/fonts";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 
@@ -18,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${red_hat_display.variable} ${roboto_mono.variable}`}>
+      <body
+        className={`${red_hat_display.variable} ${roboto_mono.variable} ${unifraktur_cook.variable}`}
+      >
         {children}
       </body>
     </html>

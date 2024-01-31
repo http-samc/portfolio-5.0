@@ -4,19 +4,17 @@ import { Balancer } from "react-wrap-balancer";
 
 interface CommandBlockProps {
   title: string;
-  text: string | ReactNode;
+  children: ReactNode;
 }
 
-const CommandBlock = ({ title, text }: CommandBlockProps) => {
+const CommandBlock = ({ title, children }: CommandBlockProps) => {
   return (
     <div className="flex flex-col space-y-0.5">
       <h4 className="flex items-center space-x-1 -ml-2">
         <ChevronRightIcon size={16} />
-        <span className="font-mono">{title}</span>
+        <span className="font-mono -mt-[2.5px]">{title}</span>
       </h4>
-      <p className="-ml-1">
-        <Balancer>{text}</Balancer>
-      </p>
+      <div className="-ml-1">{children}</div>
     </div>
   );
 };

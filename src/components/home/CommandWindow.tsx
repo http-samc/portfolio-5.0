@@ -6,9 +6,13 @@ import {
   CommandIcon,
 } from "lucide-react";
 import React from "react";
-import CommandBlock from "./CommandBlock";
+import { getFirstPageByType } from "@/lib/queries";
+import RemoteMarkdown from "@components/ui/remote-markdown";
 
-const CommandWindow = () => {
+const CommandWindow = async () => {
+  const home = await getFirstPageByType("home");
+  if (!home) return;
+
   return (
     <div className="w-full relative group overflow-hidden rounded-lg">
       <div className="absolute flex justify-center items-center w-full h-full">
@@ -46,7 +50,11 @@ const CommandWindow = () => {
             <p className="select-none">1</p>
           </div>
         </div>
-        {<CommandBlock title="foo" text="hello, world" />}
+        <RemoteMarkdown
+          markdown={home.body}
+          className="prose-p:my-0 prose-p:ml-3 prose-headings:m-1 prose-img:m-0 z-10"
+          prose
+        />
       </div>
     </div>
   );

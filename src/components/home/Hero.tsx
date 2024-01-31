@@ -3,7 +3,7 @@ import Headshot from "../../../public/headshot.png";
 import { MapPinIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
-import DotGrid from "@/components/DotGrid";
+import DotGrid from "@/components/home/DotGrid";
 
 const Hero = () => {
   return (
@@ -22,7 +22,7 @@ const Hero = () => {
             <MapPinIcon size={22} className="text-red-400 mb-2 inline-block" />
           </Balancer>
         </h2>
-        <h3 className="md:max-w-[40ch] text-lg sm:text-base mt-4 italic">
+        <h3 className="md:max-w-[40ch] text-lg sm:text-base mt-4 italic text-gray-700 dark:text-gray-400">
           <Balancer>
             Full stack developer. Coding to make the world a better place and
             building awesome stuff along the way.

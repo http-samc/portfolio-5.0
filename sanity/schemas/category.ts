@@ -16,4 +16,9 @@ export default defineType({
       type: 'text',
     }),
   ],
-})
+});
+
+export interface Category {
+  title: string;
+  description: string;
+}

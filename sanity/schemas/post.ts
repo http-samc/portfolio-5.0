@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {Image, defineField, defineType} from 'sanity'
 
 export default defineType({
   name: 'post',
@@ -8,6 +8,11 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
       type: 'string',
     }),
     defineField({
@@ -38,7 +43,15 @@ export default defineType({
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{ type: 'reference', to: { type: 'category' } }],
+    }),
+    defineField({
+      name: 'pageType',
+      title: 'Page Type',
+      type: 'string',
+      options: {
+        list: ['home', 'project', 'research', 'resume', 'blog', 'essay', 'contact']
+      }
     }),
     defineField({
       name: 'publishedAt',
@@ -48,19 +61,30 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'markdown',
     }),
   ],
-
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      pageType: 'pageType',
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { pageType } = selection
+      return { ...selection, subtitle: pageType }
     },
   },
-})
+});
+
+export interface Post {
+  title: string;
+  description: string;
+  slug: {
+    current: string;
+  };
+  mainImage?: Image;
+  pageType: "home" | "project" | "research" | "resume" | "blog" | "essay" | "contact";
+  publishedAt: string;
+  body: string;
+}

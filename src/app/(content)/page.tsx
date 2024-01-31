@@ -1,5 +1,5 @@
-import Hero from "./Hero";
-import CommandWindow from "./CommandWindow";
+import Hero from "@/components/home/Hero";
+import CommandWindow from "@/components/home/CommandWindow";
 
 export default function Home() {
   return (

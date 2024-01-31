@@ -57,6 +57,7 @@ module.exports = {
         // sans: "var(--font-red_hat_display)",
         mono: "var(--font-roboto_mono)",
         playful: "var(--font-permanent_marker",
+        "old-english": "var(--font-unifraktur_cook)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -79,5 +80,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };

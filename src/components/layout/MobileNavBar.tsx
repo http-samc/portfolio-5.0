@@ -11,8 +11,9 @@ import { Button } from "@/components/ui/button";
 import { MenuIcon, PencilIcon } from "lucide-react";
 import ThemeButton from "./ThemeButton";
 import NavLink from "./NavLink";
+import { NavBarProps } from "./Header";
 
-const MobileNavBar = () => {
+const MobileNavBar = ({ pages }: NavBarProps) => {
   return (
     <Sheet>
       <SheetTrigger className="md:hidden" asChild>
@@ -22,11 +23,9 @@ const MobileNavBar = () => {
       </SheetTrigger>
       <SheetContent className="w-48 flex flex-col justify-between">
         <div className="flex flex-col">
-          <NavLink
-            text="Blog"
-            icon={<PencilIcon className="w-4 h-4" />}
-            href="#"
-          />
+          {pages.map((page) => (
+            <NavLink {...page} key={`mobile-nav-${page.href}`} type="mobile" />
+          ))}
         </div>
         <div className=""></div>
         <ThemeButton />

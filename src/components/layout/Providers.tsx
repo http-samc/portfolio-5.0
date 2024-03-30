@@ -2,12 +2,15 @@
 
 import React from "react";
 import { ThemeProvider } from "next-themes";
-import { Provider } from "react-wrap-balancer";
+import { Provider as ReactWrapProvider } from "react-wrap-balancer";
+import { TooltipProvider } from "../ui/tooltip";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <ThemeProvider defaultTheme="dark" attribute="class">
-      <Provider>{children}</Provider>
+      <ReactWrapProvider>
+        <TooltipProvider>{children}</TooltipProvider>
+      </ReactWrapProvider>
     </ThemeProvider>
   );
 };

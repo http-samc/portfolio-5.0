@@ -1,7 +1,7 @@
 import { client } from "../../sanity/lib/client";
 import { Category, Post } from "../../sanity/schema";
 
-interface ExpandedPost extends Post {
+export interface ExpandedPost extends Post {
   categories: Category[] | null;
 }
 

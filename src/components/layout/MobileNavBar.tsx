@@ -17,8 +17,8 @@ const MobileNavBar = ({ pages }: NavBarProps) => {
   return (
     <Sheet>
       <SheetTrigger className="md:hidden" asChild>
-        <Button size="icon" variant="outline">
-          <MenuIcon />
+        <Button size="icon" variant="outline" className="w-6 h-6">
+          <MenuIcon className="w-4" />
         </Button>
       </SheetTrigger>
       <SheetContent className="w-48 flex flex-col justify-between">

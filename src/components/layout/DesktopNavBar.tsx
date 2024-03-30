@@ -6,6 +6,7 @@ import NavLink, { NavLinkProps } from "./NavLink";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { NavBarProps } from "./Header";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const DesktopNavBar = ({ pages }: NavBarProps) => {
   const [activePage, setActivePage] = useState(pages[0].href);
@@ -32,12 +33,19 @@ const DesktopNavBar = ({ pages }: NavBarProps) => {
         className="flex space-x-2 items-center"
       >
         {pages.map((page) => (
-          <NavLink
-            {...page}
-            type="desktop"
-            key={`desktop-nav-${page.href}`}
-            active={activePage === page.href}
-          />
+          <Tooltip key={page.text}>
+            <TooltipTrigger>
+              <NavLink
+                {...page}
+                type="desktop"
+                key={`desktop-nav-${page.href}`}
+                active={activePage === page.href}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{page.text}</p>
+            </TooltipContent>
+          </Tooltip>
         ))}
       </motion.nav>
       <ThemeButton />

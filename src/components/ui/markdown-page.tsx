@@ -5,6 +5,8 @@ import PageTitle from "./page-title";
 import Image from "next/image";
 import { urlForImage } from "../../../sanity/lib/image";
 import RemoteMarkdown from "./remote-markdown";
+import { TracingBeam } from "./tracing-beam";
+import Balancer from "react-wrap-balancer";
 
 interface MarkdownPageProps {
   pageType: Post["pageType"];
@@ -21,18 +23,20 @@ const MarkdownPage = async ({ pageType, slug }: MarkdownPageProps) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <TracingBeam className="flex flex-col">
       <PageTitle>{page.title}</PageTitle>
       <div className="flex flex-col w-full">
         {page.description && <p className="italic">{page.description}</p>}
         <p className="text-sm text-gray-700 dark:text-gray-400">
-          {page.publishedAt
-            ? `Published ${new Date(page.publishedAt).toLocaleDateString()}`
-            : ""}
-          {page.publishedAt && page.categories?.length ? " under " : ""}
-          {page.categories?.length
-            ? page.categories.map((category) => category.title).join(" • ")
-            : ""}
+          <Balancer>
+            {page.publishedAt
+              ? `Published ${new Date(page.publishedAt).toLocaleDateString()}`
+              : ""}
+            {page.publishedAt && page.categories?.length ? " under " : ""}
+            {page.categories?.length
+              ? page.categories.map((category) => category.title).join(" • ")
+              : ""}
+          </Balancer>
         </p>
       </div>
       {page.mainImage && (
@@ -49,7 +53,7 @@ const MarkdownPage = async ({ pageType, slug }: MarkdownPageProps) => {
         </div>
       )}
       <RemoteMarkdown markdown={page.body} />
-    </div>
+    </TracingBeam>
   );
 };
 

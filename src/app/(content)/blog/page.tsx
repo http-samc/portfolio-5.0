@@ -1,4 +1,4 @@
-import BlogPost from "@/components/blog/BlogPost";
+import BlogPreview from "@/components/blog/blog-preview";
 import PageTitle from "@/components/ui/page-title";
 import { getPagesByType } from "@/lib/queries";
 import React from "react";
@@ -8,9 +8,13 @@ const Blog = async () => {
   return (
     <div className="flex flex-col">
       <PageTitle>Hot off the press</PageTitle>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {posts.map((post, idx) => (
-          <BlogPost featured={idx == 0} key={`blog-${post.slug}`} {...post} />
+          <BlogPreview
+            featured={idx == 0}
+            key={`blog-preview-${post.slug.current}`}
+            {...post}
+          />
         ))}
       </div>
     </div>

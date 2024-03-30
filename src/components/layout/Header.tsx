@@ -14,6 +14,7 @@ import {
   MailIcon,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export interface NavBarProps {
   pages: Omit<NavLinkProps, "type">[];
 }
@@ -52,7 +53,7 @@ const PAGES: Omit<NavLinkProps, "type">[] = [
   {
     text: "contact",
     icon: <MailIcon size={14} />,
-    href: "/contact",
+    href: "mailto:snc62@cornell.edu",
   },
 ];
 
@@ -60,9 +61,11 @@ const Header = () => {
   return (
     <motion.header
       layoutScroll
-      className="flex w-full max-w-[800px] mx-auto items-center justify-between p-4 backdrop-blur-md fixed z-20"
+      className="flex w-full max-w-[800px] mx-auto items-center justify-between p-4 fixed z-50"
     >
-      <p className="brand-gradient-text text-xl">smrth</p>
+      <Link href="/" className="brand-gradient-text text-xl">
+        smrth
+      </Link>
       <div className="flex items-center space-x-2">
         <DesktopNavBar pages={PAGES} />
         <MobileNavBar pages={PAGES} />

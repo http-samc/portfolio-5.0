@@ -1,4 +1,4 @@
-import Hero from "@/components/home/top/hero";
+import Hero from "@/components/home/hero";
 import CommandWindow from "@/components/home/command-window";
 import { getMostRecentLocation } from "@/lib/queries";
 

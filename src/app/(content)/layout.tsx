@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "@/components/layout/top/footer";
-import Header from "@/components/layout/top/header";
-import Providers from "@/components/layout/top/providers";
+import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
+import Providers from "@/components/layout/providers";
 
 // Automatically revalidate every 7 days
 export const revalidate = 60 * 60 * 24;

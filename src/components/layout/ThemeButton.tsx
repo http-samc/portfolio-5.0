@@ -1,12 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@components/ui/button";
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { LoaderIcon, MoonIcon, SunIcon } from "lucide-react";
 
 const ThemeButton = () => {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <Button
@@ -15,10 +18,14 @@ const ThemeButton = () => {
       className="rounded-full mx-auto"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      {!theme || theme === "dark" ? (
-        <SunIcon size={16} />
+      {mounted ? (
+        !theme || theme === "dark" ? (
+          <SunIcon size={16} />
+        ) : (
+          <MoonIcon size={16} />
+        )
       ) : (
-        <MoonIcon size={16} />
+        <LoaderIcon className="animate-spin" size={16} />
       )}
     </Button>
   );

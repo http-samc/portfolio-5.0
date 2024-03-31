@@ -41,7 +41,7 @@ const ProjectPreview = (project: ExpandedPost) => {
       </div>
       <div
         className={cn(
-          "w-2/3 group-hover:border-0 border-l h-full flex flex-col space-y-1 px-4 py-1",
+          "w-2/3 md:group-hover:border-0 border-l h-full flex flex-col space-y-1 px-4 py-1",
           {
             "lg:w-full lg:border-l-0 lg:border-t lg:h-1/3": !project.featured,
             "lg:p-4": project.featured,

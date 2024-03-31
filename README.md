@@ -1,5 +1,5 @@
 TODO:
 
-- Setup ISR
+- Setup ISR (eventually)
 - Copy
 - SEO

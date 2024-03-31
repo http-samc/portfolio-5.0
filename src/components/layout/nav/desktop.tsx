@@ -5,7 +5,7 @@ import ThemeButton from "../theme-button";
 import NavLink, { NavLinkProps } from "./link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { NavBarProps } from "../header";
+import { NavBarProps } from "../top/header";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 
 const DesktopNav = ({ pages }: NavBarProps) => {

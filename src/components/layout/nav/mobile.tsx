@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { MenuIcon, PencilIcon } from "lucide-react";
 import ThemeButton from "../theme-button";
 import NavLink from "./link";
-import { NavBarProps } from "../header";
+import { NavBarProps } from "../top/header";
 
 const MobileNav = ({ pages }: NavBarProps) => {
   return (

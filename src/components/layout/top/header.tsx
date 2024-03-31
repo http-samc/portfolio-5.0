@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import MobileNav from "./nav/mobile";
-import DesktopNav from "./nav/desktop";
-import { NavLinkProps } from "./nav/link";
+import MobileNav from "../nav/mobile";
+import DesktopNav from "../nav/desktop";
+import { NavLinkProps } from "../nav/link";
 import {
   HomeIcon,
   TerminalIcon,

@@ -35,7 +35,7 @@ const Hero = ({ location }: HeroProps) => {
             arth Chitgopekar
           </Balancer>
         </h1>
-        <h2 className="text-lg sm:text-2xl mt-2">
+        <h2 className="text-lg sm:text-2xl mt-2 whitespace-nowrap">
           <Balancer>
             A
             <TextTransition

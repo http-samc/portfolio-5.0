@@ -12,7 +12,7 @@ const ProjectPreview = (project: ExpandedPost) => {
         pathname: `/projects/${project.slug.current}`,
       }}
       className={cn(
-        "border group rounded w-full flex justify-between relative h-32 lg:h-72 overflow-hidden transition-transform hover:scale-105 active:scale-95",
+        "border group rounded w-full flex justify-between relative h-32 lg:h-72 overflow-hidden transition-transform md:hover:scale-105 md:active:scale-95",
         {
           "lg:col-span-2": project.featured,
           "lg:flex-col": !project.featured,

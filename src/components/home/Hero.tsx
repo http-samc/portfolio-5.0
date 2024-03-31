@@ -10,7 +10,11 @@ import TextTransition from "../ui/text-transition";
 
 const WORDS = ["comedian", "golfer", "student"];
 
-const Hero = () => {
+interface HeroProps {
+  location: string;
+}
+
+const Hero = ({ location }: HeroProps) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -20,9 +24,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="flex flex-col sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
+    <div className="flex flex-col min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
       <div className="sm:w-4/5">
-        <h1 className="text-5xl sm:text-4xl font-extrabold">
+        <h1 className="text-5xl sm:text-4xl leading-tight font-extrabold">
           <Balancer>
             {"I'm "}
             <span className="underline decoration-double underline-offset-4 decoration-blue-400 font-sans">
@@ -31,7 +35,7 @@ const Hero = () => {
             arth Chitgopekar
           </Balancer>
         </h1>
-        <h2 className="text-3xl sm:text-2xl mt-2">
+        <h2 className="text-2xl mt-2">
           <Balancer>
             A
             <TextTransition
@@ -47,13 +51,13 @@ const Hero = () => {
         <h3 className="">
           <Balancer className="md:max-w-[40ch] text-base mt-4 italic text-gray-600 dark:text-slate-500">
             Full stack developer.{" "}
-            <span className="dark:text-blue-700 text-violet-900">Coding</span>{" "}
+            <span className="dark:text-blue-700 text-violet-400">Coding</span>{" "}
             to make the world{" "}
-            <span className="dark:text-blue-700 text-violet-900">
+            <span className="dark:text-blue-700 text-violet-400">
               a better place
             </span>{" "}
             and building{" "}
-            <span className="dark:text-blue-700 text-violet-900">
+            <span className="dark:text-blue-700 text-violet-400">
               awesome stuff
             </span>{" "}
             along the way.
@@ -69,7 +73,7 @@ const Hero = () => {
           <p className="font-mono text-sm pt-2">
             [Currently] in{" "}
             <span className="underline decoration-wavy text-blue-400">
-              Ithaca
+              {location}
             </span>
           </p>
           <PlaneIcon className="text-blue-400" size={14} />

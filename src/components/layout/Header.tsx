@@ -31,16 +31,6 @@ const PAGES: Omit<NavLinkProps, "type">[] = [
     href: "/projects",
   },
   {
-    text: "research",
-    icon: <TestTube2Icon size={14} />,
-    href: "/research",
-  },
-  {
-    text: "resume",
-    icon: <GraduationCapIcon size={14} />,
-    href: "/resume",
-  },
-  {
     text: "blog",
     icon: <BookIcon size={14} />,
     href: "/blog",
@@ -49,6 +39,16 @@ const PAGES: Omit<NavLinkProps, "type">[] = [
     text: "essays",
     icon: <ScrollTextIcon size={14} />,
     href: "/essays",
+  },
+  {
+    text: "research",
+    icon: <TestTube2Icon size={14} />,
+    href: "/research",
+  },
+  {
+    text: "resume",
+    icon: <GraduationCapIcon size={14} />,
+    href: "/resume",
   },
   {
     text: "contact",

@@ -25,6 +25,12 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -83,6 +89,7 @@ export interface Post {
   slug: {
     current: string;
   };
+  featured: boolean;
   mainImage?: Image;
   pageType: "home" | "project" | "research" | "resume" | "blog" | "essay" | "contact";
   publishedAt: string;

@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { urlForImage } from "../../../sanity/lib/image";
+import { cn } from "@/lib/utils";
 
 const ProjectPreview = (project: ExpandedPost) => {
   return (
@@ -10,15 +11,25 @@ const ProjectPreview = (project: ExpandedPost) => {
       href={{
         pathname: `/projects/${project.slug.current}`,
       }}
-      className="border group rounded w-full flex lg:flex-col justify-between relative h-32 lg:h-72 overflow-hidden transition-transform hover:scale-105 active:scale-95"
+      className={cn(
+        "border group rounded w-full flex justify-between relative h-32 lg:h-72 overflow-hidden transition-transform hover:scale-105 active:scale-95",
+        {
+          "lg:col-span-2": project.featured,
+          "lg:flex-col": !project.featured,
+        }
+      )}
     >
-      <div className="w-1/3 lg:w-full h-full lg:h-2/3 relative">
+      <div
+        className={cn("w-1/3 h-full m-auto lg:h-2/3 relative", {
+          "lg:w-full": !project.featured,
+        })}
+      >
         {project.mainImage && (
           <Image
             src={urlForImage(project.mainImage).width(300).url()}
             fill
             style={{ objectFit: "contain" }}
-            alt="me"
+            alt={project.title}
             className="p-3"
             draggable={false}
           />
@@ -28,9 +39,37 @@ const ProjectPreview = (project: ExpandedPost) => {
         <div className="absolute w-32 h-32 rounded-full left-0 bottom-0 group-hover:bg-brand-gradient-to mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
         <div className="absolute w-32 h-32 rounded-full right-0 bottom-0 group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
       </div>
-      <div className="w-2/3 group-hover:border-0 border-l lg:border-l-0 lg:border-t lg:w-full h-full lg:h-1/3 flex flex-col space-y-1 px-4 py-1">
-        <p className="font-semibold">{project.title}</p>
-        <p className="overflow-hidden text-sm text-blue-400 whitespace-nowrap overflow-ellipsis font-mono">
+      <div
+        className={cn(
+          "w-2/3 group-hover:border-0 border-l h-full flex flex-col space-y-1 px-4 py-1",
+          {
+            "lg:w-full lg:border-l-0 lg:border-t lg:h-1/3": !project.featured,
+            "lg:p-4": project.featured,
+          }
+        )}
+      >
+        <p
+          className={cn("font-semibold", {
+            "lg:text-4xl": project.featured,
+          })}
+        >
+          {project.title}
+        </p>
+        <p
+          className={cn("hidden", {
+            "lg:block text-gray-700 dark:text-gray-400": project.featured,
+          })}
+        >
+          {project.description}
+        </p>
+        <p
+          className={cn(
+            "overflow-hidden text-sm text-blue-400 whitespace-nowrap overflow-ellipsis font-mono",
+            {
+              "lg:overflow-auto lg:whitespace-normal": project.featured,
+            }
+          )}
+        >
           {project.categories &&
             project.categories.map((category) => category.title).join(" • ")}
         </p>

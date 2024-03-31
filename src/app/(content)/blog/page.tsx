@@ -11,9 +11,8 @@ const Blog = async () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {posts.map((post, idx) => (
           <BlogPreview
-            featured={idx == 0}
             key={`blog-preview-${post.slug.current}`}
-            {...post}
+            {...{ ...post, featured: idx === 0 }}
           />
         ))}
       </div>

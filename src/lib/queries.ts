@@ -1,9 +1,15 @@
 import { client } from "../../sanity/lib/client";
-import { Category, Post } from "../../sanity/schema";
+import { Category, Post, Location } from "../../sanity/schema";
 
 export interface ExpandedPost extends Post {
   categories: Category[] | null;
 }
+
+export const getMostRecentLocation = () => (
+  client.fetch<Location[]>(`*[_type=="location"] | order(time desc) {
+    ...
+  }`).then(result => result.length ? result[0] : null)
+);
 
 export const getPagesByType = (pageType: Post['pageType']) => (
   client.fetch<ExpandedPost[]>(`*[_type=="post" && pageType=="${pageType}"] | order(publishedAt desc) {

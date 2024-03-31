@@ -15,7 +15,7 @@ const EssayPreview = ({ numEssays, index, ...essay }: EssayPreviewProps) => {
       }}
       className="text-lg group flex space-x-4 divide-x rounded-lg transition-colors"
     >
-      <p className="font-mono font-semibold whitespace-nowrap group-hover:bg-clip-text group-hover:text-transparent group-hover:brand-gradient-bg">
+      <p className="font-mono h-full my-auto font-semibold whitespace-nowrap group-hover:bg-clip-text group-hover:text-transparent group-hover:brand-gradient-bg">
         No. {numEssays - index}
       </p>
       <p className="pl-4 group-hover:bg-clip-text group-hover:text-transparent group-hover:brand-gradient-bg">

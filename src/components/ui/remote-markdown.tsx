@@ -2,6 +2,7 @@ import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import CommandBlock from "@components/home/CommandBlock";
 import { cn } from "@/lib/utils";
+import GitHubActivity from "@/components/home/github-activity";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -24,7 +25,10 @@ const RemoteMarkdown = async ({
         className
       )}
     >
-      <MDXRemote source={markdown} components={{ CommandBlock }} />
+      <MDXRemote
+        source={markdown}
+        components={{ CommandBlock, GitHubActivity }}
+      />
     </div>
   );
 };

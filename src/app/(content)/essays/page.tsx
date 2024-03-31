@@ -19,12 +19,6 @@ const Essays = async () => {
               key={`essay-preview-${essay.slug.current}`}
               {...essay}
             />
-            <EssayPreview
-              index={idx}
-              numEssays={essays.length}
-              key={`essay-preview-${essay.slug.current}`}
-              {...essay}
-            />
           </>
         ))}
       </div>

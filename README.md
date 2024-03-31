@@ -1,7 +1,6 @@
 TODO:
 
-- Dynamic location via Sanity
-- Featured projects
+- Github Activity
 - Resume
 - Copy
 - Clean up file naming

@@ -25,20 +25,20 @@ const CommandWindow = async () => {
             <div className="w-3 h-3 bg-red-400 active:bg-red-300 cursor-pointer rounded-full flex justify-center items-center">
               <XIcon
                 size={10}
-                className="text-red-950 md:sm:text-transparent rotate-180 md:group-hover:text-red-950 md:transition-all md:delay-300"
+                className="text-red-950 md:sm:text-transparent rotate-180 md:hover:text-red-950 md:transition-all"
               />
             </div>
             <div className="w-3 h-3 bg-yellow-500 active:bg-yellow-300 cursor-pointer rounded-full flex justify-center items-center">
               <MinusIcon
                 size={10}
-                className="text-yellow-950 md:text-transparent rotate-180 md:group-hover:text-yellow-950 md:transition-all md:delay-300"
+                className="text-yellow-950 md:text-transparent rotate-180 md:hover:text-yellow-950 md:transition-all"
               />
             </div>
             <div className="w-3 h-3 bg-green-500 active:bg-green-400 cursor-pointer rounded-full flex justify-center items-center">
               <Maximize2Icon
                 size={7}
                 fontWeight={900}
-                className="text-green-950 md:text-transparent rotate-90 md:group-hover:text-green-950 md:transition-all md:delay-300"
+                className="text-green-950 md:text-transparent rotate-90 md:hover:text-green-950 md:transition-all"
               />
             </div>
           </div>
@@ -51,7 +51,7 @@ const CommandWindow = async () => {
         </div>
         <RemoteMarkdown
           markdown={home.body}
-          className="prose-p:my-0 prose-p:ml-3 prose-headings:m-1 prose-img:m-0 z-10"
+          className="prose-p:my-0 pr-2 prose-p:ml-3 prose-headings:m-1 max-w-none prose-img:m-0 z-10"
           prose
         />
       </div>

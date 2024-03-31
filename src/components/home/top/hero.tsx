@@ -5,8 +5,8 @@ import { MapPinIcon, PlaneTakeoffIcon, PlaneIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import DotGrid from "@/components/home/dot-grid";
-import { TextGenerateEffect } from "../ui/text-generate-effect";
-import TextTransition from "../ui/text-transition";
+import { TextGenerateEffect } from "../../ui/text-generate-effect";
+import TextTransition from "../../ui/text-transition";
 
 const WORDS = ["comedian", "golfer", "student"];
 

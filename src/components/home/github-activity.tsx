@@ -8,9 +8,13 @@ interface GitHubActivityProps {
   user: string;
 }
 
+// Revalidate every half hour
+export const revalidate = 0;
+
 const GitHubActivity = async ({ user }: GitHubActivityProps) => {
   const data: GitHubActivityResponse = await fetch(
-    `${process.env.URL}/api/github-activity/${user}`
+    `${process.env.URL}/api/github-activity/${user}`,
+    { cache: "no-store" }
   ).then((res) => res.json());
 
   return (

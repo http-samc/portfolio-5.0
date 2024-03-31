@@ -23,6 +23,9 @@ dependencies:
   '@sanity/vision':
     specifier: '3'
     version: 3.14.1(@babel/runtime@7.22.6)(@codemirror/lint@6.4.0)(@codemirror/state@6.2.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.3)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11)
+  '@sanity/webhook':
+    specifier: ^4.0.3
+    version: 4.0.3
   '@types/react-dom':
     specifier: 18.2.6
     version: 18.2.6
@@ -57,7 +60,7 @@ dependencies:
     specifier: ^4.4.1
     version: 4.4.1(react-dom@18.2.0)(react@18.2.0)
   next-sanity:
-    specifier: '5'
+    specifier: ^5.1.1
     version: 5.1.1(@sanity/client@6.1.7)(@sanity/icons@2.4.1)(@sanity/types@3.14.1)(@sanity/ui@1.7.2)(@types/styled-components@5.1.26)(next@14.1.0)(react@18.2.0)(sanity@3.14.1)(styled-components@5.3.11)
   next-themes:
     specifier: ^0.2.1
@@ -2148,6 +2151,11 @@ packages:
     dependencies:
       base64url: 3.0.1
       tslib: 2.6.0
+    dev: false
+
+  /@sanity/webhook@4.0.3:
+    resolution: {integrity: sha512-YN09zQYyDFj/4aZ5wYHztqaFPB0sm7K3oc6kJXpbdsLk+sXaTe0V2K/uLa6EgAsxyTG7+3jsT3y5ey2p5YkWkw==}
+    engines: {node: '>=20.0.0'}
     dev: false
 
   /@swc/helpers@0.5.2:

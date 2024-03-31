@@ -36,17 +36,15 @@ const Hero = ({ location }: HeroProps) => {
           </Balancer>
         </h1>
         <h2 className="text-lg sm:text-2xl mt-2 whitespace-nowrap">
-          <Balancer>
-            A
-            <TextTransition
-              springConfig="stiff"
-              inline
-              className="mx-1.5"
-              text={WORDS[index % WORDS.length]! || "comedian"}
-            />
-            from Chicago, IL{" "}
-            <MapPinIcon size={22} className="text-red-400 mb-2 inline-block" />
-          </Balancer>
+          A
+          <TextTransition
+            springConfig="stiff"
+            inline
+            className="mx-1.5"
+            text={WORDS[index % WORDS.length]! || "comedian"}
+          />
+          from Chicago, IL{" "}
+          <MapPinIcon size={22} className="text-red-400 mb-2 inline-block" />
         </h2>
         <h3 className="">
           <Balancer className="md:max-w-[40ch] text-base mt-4 italic text-gray-600 dark:text-slate-500">

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Headshot from "../../../public/headshot.png";
+import Headshot from "../../../../public/headshot.png";
 import { MapPinIcon, PlaneTakeoffIcon, PlaneIcon } from "lucide-react";
 import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";

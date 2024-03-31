@@ -1,5 +1,3 @@
-import { NextRequest, NextResponse } from "next/server";
-
 export type EVENT_COLOR =
   | "cyan"
   | "green"
@@ -53,23 +51,16 @@ const getEventTagline = (event: any): string | null => {
   return null;
 };
 
-interface GitHubActivityParams {
-  user?: string;
-}
-
-export async function GET(
-  _: NextRequest,
-  { params }: { params: GitHubActivityParams }
-) {
-  const { user } = params;
-
+export async function getGitHubActivity(user: string) {
+  "use server";
   try {
     if (!user) {
-      return new NextResponse("No user specified.", { status: 400 });
+      return null;
     }
 
     let events = await fetch(`https://api.github.com/users/${user}/events`, {
       headers: { Authorization: `token ${process.env.GITHUB_TOKEN}` },
+      cache: "no-store",
     }).then((res) => res.json());
 
     let event = null;
@@ -81,7 +72,7 @@ export async function GET(
     }
 
     if (!event) {
-      return new NextResponse("No recognized events found.", { status: 400 });
+      return null;
     }
 
     let [action, color] = EVENT_LOOKUP[event.type as keyof typeof EVENT_LOOKUP];
@@ -93,7 +84,7 @@ export async function GET(
       message = message.substring(0, 15) + "...";
     }
 
-    return NextResponse.json({
+    return {
       user: {
         avatarUrl: event.actor.avatar_url as string,
         username: user,
@@ -108,8 +99,8 @@ export async function GET(
         url: `https://github.com/${event.repo.name}`,
         name: event.repo.name.split("/")[1],
       },
-    } as GitHubActivityResponse);
+    } as GitHubActivityResponse;
   } catch (err) {
-    return new NextResponse(err as string, { status: 400 });
+    return null;
   }
 }

@@ -1,4 +1,5 @@
 import { GitHubActivityResponse } from "@/app/api/github-activity/[user]/route";
+import { getGitHubActivity } from "@/lib/github";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,10 +13,11 @@ interface GitHubActivityProps {
 export const revalidate = 0;
 
 const GitHubActivity = async ({ user }: GitHubActivityProps) => {
-  const data: GitHubActivityResponse = await fetch(
-    `${process.env.URL}/api/github-activity/${user}`,
-    { cache: "no-store" }
-  ).then((res) => res.json());
+  // const data: GitHubActivityResponse = await fetch(
+  //   `${process.env.URL}/api/github-activity/${user}`,
+  //   { cache: "no-store" }
+  // ).then((res) => res.json());
+  const data = (await getGitHubActivity(user))!;
 
   return (
     <div className="flex not-prose font-mono text-xs sm:text-sm items-center justify-between p-2 mx-3 rounded border bg-card">

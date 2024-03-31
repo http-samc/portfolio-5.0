@@ -1,5 +1,5 @@
-import Hero from "@/components/home/Hero";
-import CommandWindow from "@/components/home/CommandWindow";
+import Hero from "@/components/home/hero";
+import CommandWindow from "@/components/home/command-window";
 import { getMostRecentLocation } from "@/lib/queries";
 
 export default async function Home() {

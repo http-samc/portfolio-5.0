@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import MobileNavBar from "./MobileNavBar";
-import DesktopNavBar from "./DesktopNavBar";
-import { NavLinkProps } from "./NavLink";
+import MobileNav from "./nav/mobile";
+import DesktopNav from "./nav/desktop";
+import { NavLinkProps } from "./nav/link";
 import {
   HomeIcon,
   TerminalIcon,
@@ -45,11 +45,11 @@ const PAGES: Omit<NavLinkProps, "type">[] = [
     icon: <TestTube2Icon size={14} />,
     href: "/research",
   },
-  {
-    text: "resume",
-    icon: <GraduationCapIcon size={14} />,
-    href: "/resume",
-  },
+  // {
+  //   text: "resume",
+  //   icon: <GraduationCapIcon size={14} />,
+  //   href: "/resume",
+  // },
   {
     text: "contact",
     icon: <MailIcon size={14} />,
@@ -67,8 +67,8 @@ const Header = () => {
         smrth
       </Link>
       <div className="flex items-center space-x-2">
-        <DesktopNavBar pages={PAGES} />
-        <MobileNavBar pages={PAGES} />
+        <DesktopNav pages={PAGES} />
+        <MobileNav pages={PAGES} />
       </div>
     </motion.header>
   );

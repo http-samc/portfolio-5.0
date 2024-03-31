@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import ThemeButton from "./ThemeButton";
-import NavLink, { NavLinkProps } from "./NavLink";
+import ThemeButton from "../theme-button";
+import NavLink, { NavLinkProps } from "./link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { NavBarProps } from "./Header";
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { NavBarProps } from "../header";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 
-const DesktopNavBar = ({ pages }: NavBarProps) => {
+const DesktopNav = ({ pages }: NavBarProps) => {
   const [activePage, setActivePage] = useState(pages[0].href);
   const pathname = usePathname();
 
@@ -53,4 +53,4 @@ const DesktopNavBar = ({ pages }: NavBarProps) => {
   );
 };
 
-export default DesktopNavBar;
+export default DesktopNav;

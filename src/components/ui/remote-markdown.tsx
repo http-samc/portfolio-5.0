@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import CommandBlock from "@components/home/CommandBlock";
+import CommandBlock from "@/components/home/command-block";
 import { cn } from "@/lib/utils";
 import GitHubActivity from "@/components/home/github-activity";
 

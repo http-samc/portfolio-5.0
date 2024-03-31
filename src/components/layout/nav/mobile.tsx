@@ -9,11 +9,11 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { MenuIcon, PencilIcon } from "lucide-react";
-import ThemeButton from "./ThemeButton";
-import NavLink from "./NavLink";
-import { NavBarProps } from "./Header";
+import ThemeButton from "../theme-button";
+import NavLink from "./link";
+import { NavBarProps } from "../header";
 
-const MobileNavBar = ({ pages }: NavBarProps) => {
+const MobileNav = ({ pages }: NavBarProps) => {
   return (
     <Sheet>
       <SheetTrigger className="md:hidden" asChild>
@@ -34,4 +34,4 @@ const MobileNavBar = ({ pages }: NavBarProps) => {
   );
 };
 
-export default MobileNavBar;
+export default MobileNav;

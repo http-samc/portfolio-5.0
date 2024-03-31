@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
-import Providers from "@/components/layout/Providers";
+import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
+import Providers from "@/components/layout/providers";
 
 export default function RootLayout({
   children,

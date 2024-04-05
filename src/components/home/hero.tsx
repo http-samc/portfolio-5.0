@@ -8,7 +8,7 @@ import DotGrid from "@/components/home/dot-grid";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import TextTransition from "../ui/text-transition";
 
-const WORDS = ["comedian", "golfer", "student"];
+const WORDS = ["comedian", "golfer", "dj"];
 
 interface HeroProps {
   location: string;

@@ -2,6 +2,36 @@ import React from "react";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import Providers from "@/components/layout/providers";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Hey, it's Sam!",
+    template: "%s | Sam Chitgopekar",
+  },
+  openGraph: {
+    title: "smrth.dev",
+    description: "Samarth (Sam) Chitgopekar's personal site.",
+    url: "https://smrth.dev",
+    siteName: "smrth.dev",
+    images: [
+      {
+        url: "https://smrth.dev/og-image.png",
+        width: 512,
+        height: 512,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "smrth.dev",
+    description: "Samarth (Sam) Chitgopekar's personal site.",
+    images: {
+      url: "https://smrth.dev/og-image.png",
+      alt: "Computer Icon",
+    },
+  },
+};
 
 // Automatically revalidate every 7 days
 export const revalidate = 60 * 60 * 24;

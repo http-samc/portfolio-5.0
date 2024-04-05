@@ -1,5 +1,3 @@
-TODO:
+## smrth.dev v5.0
 
-- Setup ISR (eventually)
-- Copy
-- SEO
+This is the fifth (yes 5!) major version of my personal portfolio site, [smrth.dev](https://smrth.dev).

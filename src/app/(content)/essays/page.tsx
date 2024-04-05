@@ -3,6 +3,11 @@ import { getPagesByType } from "@/lib/queries";
 import Link from "next/link";
 import PageTitle from "@/components/ui/page-title";
 import EssayPreview from "@/components/essays/essay-preview";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Essays",
+};
 
 const Essays = async () => {
   const essays = await getPagesByType("essay");

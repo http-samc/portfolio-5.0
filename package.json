@@ -30,6 +30,8 @@
     "next-sanity": "^5.1.1",
     "next-themes": "^0.2.1",
     "postcss": "8.4.25",
+    "posthog-js": "^1.118.1",
+    "posthog-node": "^4.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-wrap-balancer": "^1.0.0",

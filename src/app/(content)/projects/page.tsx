@@ -5,6 +5,11 @@ import Image from "next/image";
 import PageTitle from "@/components/ui/page-title";
 import { urlForImage } from "../../../../sanity/lib/image";
 import ProjectPreview from "@/components/projects/project-preview";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+};
 
 const Projects = async () => {
   const projects = await getPagesByType("project");

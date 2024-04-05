@@ -7,6 +7,7 @@ import { Balancer } from "react-wrap-balancer";
 import DotGrid from "@/components/home/dot-grid";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import TextTransition from "../ui/text-transition";
+import BlurredText from "../ui/blurred-text";
 
 const WORDS = ["comedian", "golfer", "dj"];
 
@@ -67,15 +68,16 @@ const Hero = ({ location }: HeroProps) => {
             /> */}
           </Balancer>
         </h3>
-        <div className="flex space-x-1.5 items-center text-gray-700 dark:text-gray-500">
-          <p className="font-mono text-sm pt-2">
-            [Currently] in{" "}
-            <span className="underline decoration-wavy text-blue-400">
-              {location}
-            </span>
-          </p>
-          <PlaneIcon className="text-blue-400" size={14} />
-        </div>
+        <p className="font-mono text-sm pt-2 text-gray-700 dark:text-gray-500">
+          [Currently] in{" "}
+          <span className="underline group cursor-pointer decoration-wavy text-blue-400">
+            {location}
+            <PlaneIcon
+              className="inline-block group-hover:rotate-12 transition-transform ml-1.5 mb-2"
+              size={14}
+            />
+          </span>
+        </p>
       </div>
       <div className="flex justify-center">
         <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">

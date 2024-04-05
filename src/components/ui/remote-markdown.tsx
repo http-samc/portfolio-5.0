@@ -3,6 +3,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import CommandBlock from "@/components/home/command-block";
 import { cn } from "@/lib/utils";
 import GitHubActivity from "@/components/home/github-activity";
+import BlurredText from "./blurred-text";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -27,7 +28,7 @@ const RemoteMarkdown = async ({
     >
       <MDXRemote
         source={markdown}
-        components={{ CommandBlock, GitHubActivity }}
+        components={{ CommandBlock, GitHubActivity, BlurredText }}
       />
     </div>
   );

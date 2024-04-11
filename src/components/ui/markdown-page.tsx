@@ -11,9 +11,14 @@ import Balancer from "react-wrap-balancer";
 interface MarkdownPageProps {
   pageType: Post["pageType"];
   slug?: string;
+  className?: string;
 }
 
-const MarkdownPage = async ({ pageType, slug }: MarkdownPageProps) => {
+const MarkdownPage = async ({
+  pageType,
+  slug,
+  className,
+}: MarkdownPageProps) => {
   const page = await (slug !== undefined
     ? getPageByTypeAndSlug(pageType, slug)
     : getFirstPageByType(pageType));
@@ -23,7 +28,7 @@ const MarkdownPage = async ({ pageType, slug }: MarkdownPageProps) => {
   }
 
   return (
-    <TracingBeam className="flex flex-col">
+    <TracingBeam className={className}>
       <PageTitle>{page.title}</PageTitle>
       <div className="flex flex-col w-full">
         {page.description && <p className="italic">{page.description}</p>}
@@ -52,7 +57,7 @@ const MarkdownPage = async ({ pageType, slug }: MarkdownPageProps) => {
           />
         </div>
       )}
-      <RemoteMarkdown markdown={page.body} />
+      <RemoteMarkdown className="my-3" markdown={page.body} />
     </TracingBeam>
   );
 };

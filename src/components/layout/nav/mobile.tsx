@@ -16,7 +16,7 @@ import { NavBarProps } from "../header";
 const MobileNav = ({ pages }: NavBarProps) => {
   return (
     <Sheet>
-      <SheetTrigger className="md:hidden" asChild>
+      <SheetTrigger className="lg:hidden" asChild>
         <Button size="icon" variant="outline" className="w-6 h-6">
           <MenuIcon className="w-4" />
         </Button>

@@ -13,7 +13,7 @@ const Essays = async () => {
   const essays = await getPagesByType("essay");
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col font-serif">
       <PageTitle>Thoughts.</PageTitle>
       <div className="flex flex-col w-full space-y-2">
         {essays.map((essay, idx) => (

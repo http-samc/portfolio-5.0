@@ -12,7 +12,7 @@ const ProjectPreview = (project: ExpandedPost) => {
         pathname: `/projects/${project.slug.current}`,
       }}
       className={cn(
-        "border group rounded w-full flex justify-between relative h-32 lg:h-72 overflow-hidden transition-transform md:hover:scale-105 md:active:scale-95",
+        "border group rounded w-full flex justify-between relative h-32 lg:h-72 overflow-hidden transition-transform lg:hover:scale-105 lg:active:scale-95",
         {
           "lg:col-span-2": project.featured,
           "lg:flex-col": !project.featured,
@@ -34,14 +34,14 @@ const ProjectPreview = (project: ExpandedPost) => {
             draggable={false}
           />
         )}
-        <div className="absolute m-2 w-32 h-32 rounded-full -left-3 -top-3 md:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-30 transition-all"></div>
-        <div className="absolute m-3 w-32 h-32 rounded-full -right-3 -top-3 md:group-hover:bg-brand-gradient-via mix-blend-lighten filter blur-xl -z-10 transition-all"></div>
-        <div className="absolute w-32 h-32 rounded-full left-0 bottom-0 md:group-hover:bg-brand-gradient-to mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
-        <div className="absolute w-32 h-32 rounded-full right-0 bottom-0 md:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
+        <div className="absolute m-2 w-32 h-32 rounded-full -left-3 -top-3 lg:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-30 transition-all"></div>
+        <div className="absolute m-3 w-32 h-32 rounded-full -right-3 -top-3 lg:group-hover:bg-brand-gradient-via mix-blend-lighten filter blur-xl -z-10 transition-all"></div>
+        <div className="absolute w-32 h-32 rounded-full left-0 bottom-0 lg:group-hover:bg-brand-gradient-to mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
+        <div className="absolute w-32 h-32 rounded-full right-0 bottom-0 lg:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
       </div>
       <div
         className={cn(
-          "w-2/3 md:group-hover:border-0 border-l h-full flex flex-col space-y-1 px-4 py-1",
+          "w-2/3 lg:group-hover:border-0 border-l h-full flex flex-col space-y-1 px-4 py-1",
           {
             "lg:w-full lg:border-l-0 lg:border-t lg:h-1/3": !project.featured,
             "lg:p-4": project.featured,

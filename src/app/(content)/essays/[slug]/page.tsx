@@ -22,7 +22,9 @@ export async function generateMetadata({
 // make this general catch-all???
 
 const Essay = ({ params }: EssayProps) => {
-  return <MarkdownPage pageType="essay" slug={params.slug} />;
+  return (
+    <MarkdownPage pageType="essay" slug={params.slug} className="font-serif" />
+  );
 };
 
 export default Essay;

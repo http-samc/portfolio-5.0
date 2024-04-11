@@ -27,7 +27,7 @@ const DesktopNav = ({ pages }: NavBarProps) => {
   }, [pages, pathname]);
 
   return (
-    <div className="hidden md:flex md:space-x-4">
+    <div className="hidden lg:flex lg:space-x-4">
       <motion.nav
         layoutId="desktop-nav"
         className="flex space-x-2 items-center"

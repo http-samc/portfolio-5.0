@@ -4,6 +4,8 @@ import CommandBlock from "@/components/home/command-block";
 import { cn } from "@/lib/utils";
 import GitHubActivity from "@/components/home/github-activity";
 import BlurredText from "./blurred-text";
+import ImagePreview from "./image-preview";
+import GitHubBadge from "./github-badge";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -28,7 +30,13 @@ const RemoteMarkdown = async ({
     >
       <MDXRemote
         source={markdown}
-        components={{ CommandBlock, GitHubActivity, BlurredText }}
+        components={{
+          CommandBlock,
+          GitHubActivity,
+          BlurredText,
+          ImagePreview,
+          GitHubBadge,
+        }}
       />
     </div>
   );

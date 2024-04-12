@@ -20,7 +20,7 @@ const ProjectPreview = (project: ExpandedPost) => {
       )}
     >
       <div
-        className={cn("w-1/3 h-full m-auto lg:h-2/3 relative", {
+        className={cn("w-1/3 h-full m-auto lg:h-2/3 relative rounded", {
           "lg:w-full": !project.featured,
         })}
       >

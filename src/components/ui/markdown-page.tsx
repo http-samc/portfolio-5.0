@@ -11,12 +11,14 @@ import Balancer from "react-wrap-balancer";
 interface MarkdownPageProps {
   pageType: Post["pageType"];
   slug?: string;
+  showPublishDate?: boolean;
   className?: string;
 }
 
 const MarkdownPage = async ({
   pageType,
   slug,
+  showPublishDate,
   className,
 }: MarkdownPageProps) => {
   const page = await (slug !== undefined
@@ -34,10 +36,12 @@ const MarkdownPage = async ({
         {page.description && <p className="italic">{page.description}</p>}
         <p className="text-sm text-gray-700 dark:text-gray-400">
           <Balancer>
-            {page.publishedAt
+            {showPublishDate && page.publishedAt
               ? `Published ${new Date(page.publishedAt).toLocaleDateString()}`
               : ""}
-            {page.publishedAt && page.categories?.length ? " under " : ""}
+            {showPublishDate && page.publishedAt && page.categories?.length
+              ? " under "
+              : ""}
             {page.categories?.length
               ? page.categories.map((category) => category.title).join(" • ")
               : ""}

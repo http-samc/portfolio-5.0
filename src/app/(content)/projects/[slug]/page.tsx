@@ -22,7 +22,13 @@ export async function generateMetadata({
 // make this general catch-all???
 
 const Project = ({ params }: ProjectProps) => {
-  return <MarkdownPage pageType="project" slug={params.slug} />;
+  return (
+    <MarkdownPage
+      pageType="project"
+      slug={params.slug}
+      showPublishDate={false}
+    />
+  );
 };
 
 export default Project;

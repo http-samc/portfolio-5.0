@@ -8,6 +8,7 @@ import DotGrid from "@/components/home/dot-grid";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import TextTransition from "../ui/text-transition";
 import BlurredText from "../ui/blurred-text";
+import GitHubBadge from "../ui/github-badge";
 
 const WORDS = ["comedian", "golfer", "dj"];
 
@@ -26,7 +27,7 @@ const Hero = ({ location }: HeroProps) => {
 
   return (
     <div className="flex flex-col min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
-      <div className="sm:w-4/5">
+      <div className="sm:w-4/5 md:pt-6">
         <h1 className="text-5xl sm:text-4xl leading-tight font-extrabold">
           <Balancer>
             {"I'm "}
@@ -79,7 +80,7 @@ const Hero = ({ location }: HeroProps) => {
           </span>
         </p>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center md:pt-6">
         <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">
           <div className="absolute w-full h-full brand-gradient-bg -z-10 top-0 left-0 group-hover:scale-150 transition-all"></div>
           <Image

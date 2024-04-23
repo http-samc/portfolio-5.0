@@ -34,10 +34,10 @@ const ProjectPreview = (project: ExpandedPost) => {
             draggable={false}
           />
         )}
-        <div className="absolute m-2 w-32 h-32 rounded-full -left-3 -top-3 lg:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-30 transition-all"></div>
-        <div className="absolute m-3 w-32 h-32 rounded-full -right-3 -top-3 lg:group-hover:bg-brand-gradient-via mix-blend-lighten filter blur-xl -z-10 transition-all"></div>
-        <div className="absolute w-32 h-32 rounded-full left-0 bottom-0 lg:group-hover:bg-brand-gradient-to mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
-        <div className="absolute w-32 h-32 rounded-full right-0 bottom-0 lg:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
+        <div className="absolute m-2 w-32 h-32 rounded-full -left-3 -top-3 lg:group-hover:bg-brand-gradient-from/40 dark:lg:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-30 transition-all"></div>
+        <div className="absolute m-3 w-32 h-32 rounded-full -right-3 -top-3 lg:group-hover:bg-brand-gradient-via/40 dark:lg:group-hover:bg-brand-gradient-via mix-blend-lighten filter blur-xl -z-10 transition-all"></div>
+        <div className="absolute w-32 h-32 rounded-full left-0 bottom-0 lg:group-hover:bg-brand-gradient-to/40 dark:lg:group-hover:bg-brand-gradient-to mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
+        <div className="absolute w-32 h-32 rounded-full right-0 bottom-0 lg:group-hover:bg-brand-gradient-from/40 dark:lg:group-hover:bg-brand-gradient-from mix-blend-lighten filter blur-xl -z-20 transition-all"></div>
       </div>
       <div
         className={cn(

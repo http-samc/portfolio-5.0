@@ -50,7 +50,7 @@ const ImagePreview = ({
                 />
               </div>
             </div>
-            <div className="dark:bg-gray-700 bg-gray-200 rounded h-full flex p-1 items-center space-x-1.5 text-xs w-3/5 text-gray-500 dark:text-gray-300">
+            <div className="dark:bg-gray-700 bg-gray-200/80 rounded h-full flex p-1 items-center space-x-1.5 text-xs w-3/5 text-gray-500 dark:text-gray-300">
               <LockIcon size={10} className="ml-1" />
               <span>
                 {browserUrl ||
@@ -77,6 +77,8 @@ const ImagePreview = ({
             alt={caption || ""}
             width={width || 700}
             height={height || 500}
+            draggable={false}
+            className="bg-black"
           />
         ) : (
           <iframe

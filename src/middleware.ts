@@ -8,7 +8,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL("/2phone-engineering", request.url));
   }
 
-  if (request.nextUrl.pathname.startsWith("/2phone-engineering")) {
+  if (
+    process.env.NODE_ENV === "production" &&
+    request.nextUrl.pathname.startsWith("/2phone-engineering")
+  ) {
     return NextResponse.redirect(
       `https://2phone.engineering${request.nextUrl.pathname.replace(
         "/2phone-engineering",

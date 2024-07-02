@@ -1,9 +1,14 @@
 import { client } from "../../sanity/lib/client";
-import { Category, Post, Location } from "../../sanity/schema";
+import { Category, Post, Location, Audio } from "../../sanity/schema";
 
 export interface ExpandedPost extends Post {
   categories: Category[] | null;
 }
+
+export const getAllAudios = () =>
+  client.fetch<Audio[]>(`*[_type=="audio"] {
+    ...
+  }`);
 
 export const getMostRecentLocation = () =>
   client

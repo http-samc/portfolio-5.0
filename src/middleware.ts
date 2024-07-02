@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
   const host = request.headers.get("host")!;
 
@@ -11,12 +10,14 @@ export function middleware(request: NextRequest) {
 
   if (request.nextUrl.pathname.startsWith("/2phone-engineering")) {
     return NextResponse.redirect(
-      `https://2phone.engineering${request.nextUrl.pathname}`
+      `https://2phone.engineering${request.nextUrl.pathname.replace(
+        "/2phone-engineering",
+        ""
+      )}`
     );
   }
 }
 
-// See "Matching Paths" below to learn more
 export const config = {
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };

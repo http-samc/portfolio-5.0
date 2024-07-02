@@ -1,3 +1,4 @@
+import Providers from "@/components/layout/providers";
 import { Metadata } from "next";
 import React from "react";
 
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const Layout = ({ children }: React.PropsWithChildren) => {
-  return children;
+  return <Providers>{children}</Providers>;
 };
 
 export default Layout;

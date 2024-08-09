@@ -273,7 +273,7 @@ const Sampler = ({ mixes }: SamplerProps) => {
                 <span className="text-orange-500">ディージェイ</span>
               </div>
               <span className={cn(universThin.className, "pb-1 text-gray-600")}>
-                MIXTAPE BY 2PHONESAMC
+                MIXES BY 2PHONESAMC
               </span>
             </div>
             <div className="w-full h-full bg-gray-500 grid grid-cols-12 pl-2 pt-3 pb-1">
@@ -625,8 +625,16 @@ const Sampler = ({ mixes }: SamplerProps) => {
                     playMix();
                   }}
                   customContent={
-                    <div className="w-[60px] flex justify-center pt-2">
+                    <div className="w-[60px] relative flex justify-center pt-2">
                       <p className="text-[10px] text-white">PLAY</p>
+                      <span
+                        className={cn(
+                          "absolute bg-green-400 rounded-full w-5 h-5 top-8 right-5 animate-ping",
+                          {
+                            hidden: audioState === "playing",
+                          }
+                        )}
+                      ></span>
                     </div>
                   }
                 />

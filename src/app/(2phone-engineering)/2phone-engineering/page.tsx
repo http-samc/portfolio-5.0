@@ -29,7 +29,7 @@ const Page = async () => {
           "text-sm text-gray-600 lg:text-lg mt-1"
         )}
       >
-        made in cupertino, california
+        dj-ing from cupertino, california
       </h3>
       <Sampler mixes={mixes} />
       {/* <Particles

@@ -10,7 +10,7 @@ import TextTransition from "../ui/text-transition";
 import BlurredText from "../ui/blurred-text";
 import GitHubBadge from "../ui/github-badge";
 
-const WORDS = ["comedian", "golfer", "dj"];
+const WORDS = ["comedian", "producer", "golfer", "dj", "climber"];
 
 interface HeroProps {
   location: string;
@@ -84,7 +84,7 @@ const Hero = ({ location }: HeroProps) => {
         <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">
           <div className="absolute w-full h-full brand-gradient-bg -z-10 top-0 left-0 group-hover:scale-150 transition-all"></div>
           <Image
-            className="w-44 h-44 -mt-5 scale-110 object-cover"
+            className="w-44 h-44 object-contain"
             src={Headshot}
             alt="Headshot of Samarth Chitgopekar"
             placeholder="blur"

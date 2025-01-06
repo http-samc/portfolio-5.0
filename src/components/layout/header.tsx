@@ -2,7 +2,7 @@
 
 import React from "react";
 import MobileNav from "./nav/mobile";
-import DesktopNav from "./nav/desktop";
+import DesktopNav, { PostFragements } from "./nav/desktop";
 import { NavLinkProps } from "./nav/link";
 import {
   HomeIcon,
@@ -15,8 +15,13 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+
 export interface NavBarProps {
   pages: Omit<NavLinkProps, "type">[];
+}
+
+export interface HeaderProps {
+  posts: PostFragements;
 }
 
 const PAGES: Omit<NavLinkProps, "type">[] = [
@@ -57,7 +62,7 @@ const PAGES: Omit<NavLinkProps, "type">[] = [
   },
 ];
 
-const Header = () => {
+const Header = ({ posts }: HeaderProps) => {
   return (
     <motion.header
       layoutScroll
@@ -67,7 +72,7 @@ const Header = () => {
         smrth
       </Link>
       <div className="flex items-center space-x-2">
-        <DesktopNav pages={PAGES} />
+        <DesktopNav posts={posts} pages={PAGES} />
         <MobileNav pages={PAGES} />
       </div>
     </motion.header>

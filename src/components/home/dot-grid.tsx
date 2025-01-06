@@ -10,7 +10,7 @@ const DotGrid = () => {
         {Array.from({ length: 144 }, (_, i) => (
           <span
             key={i}
-            className="w-4 h-4 bg-gray-300/40 dark:bg-gray-600/25 group-hover:bg-white rounded-full place-self-center"
+            className="w-4 h-4 bg-gray-400/50 dark:bg-gray-600/25 group-hover:bg-white rounded-full place-self-center"
             onMouseOver={() => console.log("!")}
           />
         ))}

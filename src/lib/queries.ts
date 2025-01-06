@@ -6,7 +6,7 @@ export interface ExpandedPost extends Post {
 }
 
 export const getAllAudios = () =>
-  client.fetch<Audio[]>(`*[_type=="audio"] {
+  client.fetch<Audio[]>(`*[_type=="audio"] | order(_createdAt desc) {
     ...
   }`);
 
@@ -31,6 +31,17 @@ export const getPagesByType = (pageType: Post["pageType"]) =>
     ...,
     categories[]->
   }`);
+
+export const getAllPosts = () =>
+  client.fetch<
+    { title: string; slug: { current: string }; pageType: string }[]
+  >(
+    `*[_type=="post"] {
+    title,
+    slug,
+    pageType
+  }`
+  );
 
 export const getFirstPageByType = (pageType: Post["pageType"]) =>
   client

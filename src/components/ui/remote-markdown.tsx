@@ -6,6 +6,8 @@ import GitHubActivity from "@/components/home/github-activity";
 import BlurredText from "./blurred-text";
 import ImagePreview from "./image-preview";
 import GitHubBadge from "./github-badge";
+import Experience from "../home/experience";
+import ExperienceGrid from "../home/experience-grid";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -36,6 +38,8 @@ const RemoteMarkdown = async ({
           BlurredText,
           ImagePreview,
           GitHubBadge,
+          Experience,
+          ExperienceGrid,
         }}
       />
     </div>

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "smrth.dev",
+  metadataBase: new URL("https://smrth.dev"),
   description:
     "I'm Samarth Chitgopekar, a full stack developer coding to make the world a better place and building awesome stuff along the way.",
   icons: {

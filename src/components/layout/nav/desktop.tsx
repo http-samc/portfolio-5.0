@@ -55,6 +55,7 @@ export function CommandMenu({ open, setOpen, pages, posts }: CommandMenuProps) {
         <CommandGroup heading="Suggestions">
           {pages.map((page) => (
             <CommandItem
+              key={`command-item-${page.href}`}
               onSelect={() => {
                 router.push(page.href);
                 setOpen(false);
@@ -67,6 +68,7 @@ export function CommandMenu({ open, setOpen, pages, posts }: CommandMenuProps) {
             .filter((post) => !["home", "research"].includes(post.pageType))
             .map((post) => (
               <CommandItem
+                key={`command-item-${post.pageType}-${post.slug.current}`}
                 onSelect={() => {
                   router.push(
                     `/${getRoute(post.pageType)}/${post.slug.current}`

@@ -19,7 +19,7 @@ const TrackList = () => {
   return (
     <div
       id="track-list"
-      className="flex flex-col gap-2 bg-gray-100/20 divide-y divide-gray-500 backdrop-blur-sm p-6 rounded"
+      className="flex flex-col gap-2 hidden lg:block bg-gray-100/20 divide-y divide-gray-500 backdrop-blur-sm p-6 rounded"
     >
       <h3 className="text-xl text-gray-700 font-old-english">l'ensemble</h3>
       <ul className="gap-4 pt-4 flex flex-col">

@@ -40,7 +40,7 @@ const Page = async () => {
         djing from cupertino, california
       </h3>
       <div className="mb-16 relative">
-        <div className="absolute top-6 left-0 flex w-full justify-center">
+        <div className="absolute top-6 left-0 w-full justify-center hidden lg:flex">
           <div className="bg-white/30 z-40 rounded-full px-2.5 py-0.5">
             <Link
               href="#track-list"

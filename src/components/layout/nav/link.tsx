@@ -27,8 +27,16 @@ const NavLink = ({ text, icon, href, type, active }: NavLinkProps) => {
             <motion.span
               layoutId="active-nav-indicator"
               className="absolute w-full inset-0 -z-10 bg-gradient-to-br from-brand-gradient-from via-brand-gradient-via to-brand-gradient-to"
-              style={{ borderRadius: 9999 }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+              style={{
+                borderRadius: 9999,
+              }}
+              transition={{
+                type: "spring",
+                bounce: 0.2,
+                duration: 0.5,
+                layout: { duration: 0 },
+              }}
+              // initial={false}
             />
           )}
         </>

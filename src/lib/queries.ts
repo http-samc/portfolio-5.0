@@ -6,7 +6,7 @@ export interface ExpandedPost extends Post {
 }
 
 export const getAllAudios = () =>
-  client.fetch<Audio[]>(`*[_type=="audio"] {
+  client.fetch<Audio[]>(`*[_type=="audio"] | order(_createdAt desc) {
     ...
   }`);
 

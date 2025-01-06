@@ -35,6 +35,9 @@ import { BorderBeam } from "../ui/border-beam";
 import { CardContainer } from "../ui/3d-card";
 import Marquee from "../ui/marquee";
 import { ArcherContainer, ArcherElement } from "react-archer";
+import { Mix } from "@/app/(2phone-engineering)/2phone-engineering/page";
+import { useTwoPhoneEngineering } from "@/contexts/2phone-engineering-context";
+
 const PAD_PROPS = [
   {
     indicatorName: undefined,
@@ -162,20 +165,17 @@ function getRandomNumbers() {
 export const interactiveButton =
   "hover:opacity-80 lg:active:translate-y-0.5 transition-transform lg:active:scale-[99%]";
 
-interface SamplerProps {
-  mixes: {
-    title: string;
-    src: string;
-  }[];
-}
-
-const Sampler = ({ mixes }: SamplerProps) => {
+const Sampler = () => {
+  const {
+    player,
+    audioState,
+    currentMixIdx,
+    setCurrentMixIdx,
+    mixes,
+    audioTimestamp,
+  } = useTwoPhoneEngineering();
   const [clickAudio, setClickAudio] = useState<HTMLAudioElement | null>(null);
-  const [audioTimestamp, setAudioTimestamp] = useState(0);
-  const player = useRef<HTMLAudioElement | null>(null);
-  const [audioState, setAudioState] = useState<"playing" | "paused">("paused");
   const [activeButtons, setActiveButtons] = useState<number[]>([]);
-  const [currentMixIdx, setCurrentMixIdx] = useState(0);
 
   useEffect(() => {
     if (player.current) {
@@ -187,7 +187,7 @@ const Sampler = ({ mixes }: SamplerProps) => {
         player.current.load();
       }
     }
-  }, [currentMixIdx, mixes, player]);
+  }, [currentMixIdx, mixes, player, audioState]);
 
   useEffect(() => {
     setClickAudio(new Audio("/audio/click.m4a"));
@@ -206,7 +206,7 @@ const Sampler = ({ mixes }: SamplerProps) => {
   };
   const playMix = () => {
     if (!player.current) return;
-    if (audioTimestamp > 0 && audioState === "playing") {
+    if (audioState === "playing") {
       void player.current.pause();
     } else {
       void player.current.play();
@@ -218,7 +218,7 @@ const Sampler = ({ mixes }: SamplerProps) => {
       <ArcherContainer strokeColor="black">
         <CardContainer
           className={cn(
-            "w-[42rem] -mt-48 lg:mt-0 scale-50 lg:scale-100 select-none drop-shadow-2xl h-[55rem] rounded-sm overflow-hidden flex flex-col bg-gradient-to-br from-neutral-500 to-neutral-300",
+            "w-[42rem] -mt-36 lg:mt-0 scale-50 lg:scale-100 select-none drop-shadow-2xl h-[55rem] rounded-sm overflow-hidden flex flex-col bg-gradient-to-br from-neutral-500 to-neutral-300",
             univers.className
           )}
           containerClassName="py-0 lg:py-20"
@@ -658,22 +658,6 @@ const Sampler = ({ mixes }: SamplerProps) => {
           <p>Start</p>
         </ArcherElement> */}
       </ArcherContainer>
-      <audio
-        onTimeUpdate={(e) => setAudioTimestamp(e.timeStamp)}
-        onPlay={() => setAudioState("playing")}
-        onPause={() => setAudioState("paused")}
-        onEnded={async () => {
-          if (currentMixIdx < mixes.length - 1) {
-            setCurrentMixIdx(currentMixIdx + 1);
-          } else {
-            setCurrentMixIdx(0);
-          }
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          void player.current?.play();
-        }}
-        ref={player}
-        className="hidden"
-      />
     </>
   );
 };

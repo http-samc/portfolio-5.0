@@ -10,7 +10,7 @@ const PageTitle = ({ children, hasSubtitle = false }: PageTitleProps) => {
   return (
     <h3
       className={cn(
-        "font-semibold text-3xl underline decoration-double underline-offset-4",
+        "font-semibold text-3xl underline decoration-double underline-offset-4 md:pt-3",
         {
           "mb-2": hasSubtitle,
           "mb-4": !hasSubtitle,

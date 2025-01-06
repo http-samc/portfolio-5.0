@@ -32,6 +32,17 @@ export const getPagesByType = (pageType: Post["pageType"]) =>
     categories[]->
   }`);
 
+export const getAllPosts = () =>
+  client.fetch<
+    { title: string; slug: { current: string }; pageType: string }[]
+  >(
+    `*[_type=="post"] {
+    title,
+    slug,
+    pageType
+  }`
+  );
+
 export const getFirstPageByType = (pageType: Post["pageType"]) =>
   client
     .fetch<ExpandedPost[]>(

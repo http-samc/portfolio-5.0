@@ -10,7 +10,14 @@ import TextTransition from "../ui/text-transition";
 import BlurredText from "../ui/blurred-text";
 import GitHubBadge from "../ui/github-badge";
 
-const WORDS = ["comedian", "producer", "golfer", "dj", "climber"];
+const WORDS = [
+  "comedian",
+  "motorcyclist",
+  "producer",
+  "golfer",
+  "dj",
+  "climber",
+];
 
 interface HeroProps {
   location: string;

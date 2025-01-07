@@ -8,6 +8,7 @@ import ImagePreview from "./image-preview";
 import GitHubBadge from "./github-badge";
 import Experience from "../home/experience";
 import ExperienceGrid from "../home/experience-grid";
+import SpotifyActivity from "../home/spotify-activity";
 
 interface RemoteMarkdownProps {
   markdown: string;
@@ -40,6 +41,7 @@ const RemoteMarkdown = async ({
           GitHubBadge,
           Experience,
           ExperienceGrid,
+          SpotifyActivity,
         }}
       />
     </div>

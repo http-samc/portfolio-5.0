@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { LucidePlay, LucidePlayCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+
 const SpotifyActivity = async () => {
   const { currentPlayback, topArtists } = await getSpotifyData();
   return (
@@ -58,5 +59,7 @@ const SpotifyActivity = async () => {
     </div>
   );
 };
+
+export const revalidate = 0;
 
 export default SpotifyActivity;

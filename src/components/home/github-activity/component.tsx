@@ -1,22 +1,16 @@
-import { GitHubActivityResponse } from "@/app/api/github-activity/[user]/route";
 import { getGitHubActivity } from "@/lib/github";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-interface GitHubActivityProps {
+export interface GitHubActivityProps {
   user: string;
 }
 
-// Revalidate every half hour
 export const revalidate = 0;
 
 const GitHubActivity = async ({ user }: GitHubActivityProps) => {
-  // const data: GitHubActivityResponse = await fetch(
-  //   `${process.env.URL}/api/github-activity/${user}`,
-  //   { cache: "no-store" }
-  // ).then((res) => res.json());
   const data = (await getGitHubActivity(user))!;
 
   return (
@@ -28,6 +22,7 @@ const GitHubActivity = async ({ user }: GitHubActivityProps) => {
           className="rounded-full"
           width={32}
           height={32}
+          draggable={false}
         />
         <span
           className={cn({

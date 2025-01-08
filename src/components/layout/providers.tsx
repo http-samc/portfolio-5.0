@@ -16,7 +16,12 @@ if (typeof window !== "undefined") {
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <PostHogProvider client={posthog}>
-      <ThemeProvider defaultTheme="dark" attribute="class">
+      <ThemeProvider
+        defaultTheme="dark"
+        attribute="class"
+        enableSystem={true}
+        disableTransitionOnChange
+      >
         <ReactWrapProvider>
           <TooltipProvider>{children}</TooltipProvider>
         </ReactWrapProvider>

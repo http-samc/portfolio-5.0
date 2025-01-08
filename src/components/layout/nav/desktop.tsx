@@ -52,9 +52,10 @@ export function CommandMenu({ open, setOpen, pages, posts }: CommandMenuProps) {
       <CommandInput placeholder="Find anything..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Suggestions">
+        <CommandGroup>
           {pages.map((page) => (
             <CommandItem
+              className="cursor-pointer"
               key={`command-item-${page.href}`}
               onSelect={() => {
                 router.push(page.href);
@@ -68,6 +69,7 @@ export function CommandMenu({ open, setOpen, pages, posts }: CommandMenuProps) {
             .filter((post) => !["home", "research"].includes(post.pageType))
             .map((post) => (
               <CommandItem
+                className="cursor-pointer"
                 key={`command-item-${post.pageType}-${post.slug.current}`}
                 onSelect={() => {
                   router.push(
@@ -143,7 +145,7 @@ const DesktopNav = ({ pages, posts }: DesktopNavProps) => {
           onClick={() => setCommandOpen(true)}
           className="border px-2 mt-0.5 py-1 rounded-md bg-gray-200/80 dark:bg-black hover:opacity-80 transition-opacity duration-200"
         >
-          <p className="text-sm -mt-0.5 text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
               <span className="text-xs">⌘</span>K
             </kbd>

@@ -8,9 +8,8 @@
   }
 
   .brand-gradient-text {
-    @apply font-mono not-italic bg-clip-text text-transparent brand-gradient-bg font-extrabold
+    @apply font-mono not-italic bg-clip-text text-transparent brand-gradient-bg font-extrabold;
   }
-
 }
 
 @layer base {
@@ -52,7 +51,7 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 0 0 6.7%;
     --foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;

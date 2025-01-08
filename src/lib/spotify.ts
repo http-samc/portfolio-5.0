@@ -36,73 +36,55 @@ const getAccessToken = async () => {
   return accessToken;
 };
 
-export async function getSpotifyData() {
+export async function getSpotifyData(isRetry: boolean = false) {
   client.setAccessToken(await getAccessToken());
 
-  try {
-    const { track } = (await client.getMyRecentlyPlayedTracks()).body.items[0];
-    const currentPlayback =
-      track && "artists" in track
-        ? {
-            trackName: track.name,
-            artist: track.artists[0].name,
-            albumArt: track.album.images[0].url,
-          }
-        : null;
+  const getCurrentPlayback = async () => {
+    let track: SpotifyApi.TrackObjectFull;
 
-    const topArtists = (await client.getMyTopArtists()).body.items.map(
-      (artist) => ({
-        name: artist.name,
-        art: artist.images,
-        genres: artist.genres,
-      })
-    );
+    // Prefer the currently playing track if available, fallback to a recently played track
+    const currentlyPlayingTrack = (await client.getMyCurrentPlayingTrack()).body
+      .item;
+    if (currentlyPlayingTrack && "artists" in currentlyPlayingTrack) {
+      track = currentlyPlayingTrack;
+    } else {
+      const { track: recentTrack } = (await client.getMyRecentlyPlayedTracks())
+        .body.items[0];
+      track = recentTrack;
+    }
+
+    return {
+      trackName: track.name,
+      artist: track.artists[0].name,
+      albumArt: track.album.images[0].url,
+    };
+  };
+
+  const getTopArtists = async () => {
+    return (await client.getMyTopArtists()).body.items.map((artist) => ({
+      name: artist.name,
+      art: artist.images,
+      genres: artist.genres,
+    }));
+  };
+
+  try {
+    const [currentPlayback, topArtists] = await Promise.all([
+      getCurrentPlayback(),
+      getTopArtists(),
+    ]);
 
     return {
       currentPlayback,
       topArtists,
     };
   } catch (error: any) {
-    // Check if error is due to expired token
-    if (error.statusCode === 401) {
-      try {
-        // Get new access token
-        getAccessToken();
-
-        // Update client with new token
-        client.setAccessToken(await getAccessToken());
-
-        // Retry the original request
-        const { track } = (await client.getMyRecentlyPlayedTracks()).body
-          .items[0];
-        const currentPlayback =
-          track && "artists" in track
-            ? {
-                trackName: track.name,
-                artist: track.artists[0].name,
-                albumArt: track.album.images[0].url,
-              }
-            : null;
-
-        const topArtists = (await client.getMyTopArtists()).body.items.map(
-          (artist) => ({
-            name: artist.name,
-            art: artist.images,
-            genres: artist.genres,
-          })
-        );
-
-        return {
-          currentPlayback,
-          topArtists,
-        };
-      } catch (refreshError) {
-        console.error("Error refreshing token:", refreshError);
-        throw refreshError;
-      }
+    // Recursively retry once if the token is expired
+    if (error.statusCode === 401 && !isRetry) {
+      return await getSpotifyData(true);
+    } else {
+      console.error("Error fetching Spotify data:", error);
+      throw error;
     }
-
-    console.error("Error fetching Spotify data:", error);
-    throw error;
   }
 }

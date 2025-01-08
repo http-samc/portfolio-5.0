@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { LucidePlay, LucidePlayCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import SpotifyLogo from "@/../public/spotify-logo.png";
 
 const SpotifyActivity = async () => {
   const { currentPlayback, topArtists } = await getSpotifyData();
@@ -21,11 +22,26 @@ const SpotifyActivity = async () => {
               <LucidePlayCircle className="w-10 h-10 text-gray-500 animate-pulse" />
             </div> */}
           </div>
-          <div className="w-[150px]">
-            <p className="italic font-medium line-clamp-1">
-              {currentPlayback.trackName}
-            </p>
-            <p className="line-clamp-1">{currentPlayback.artist}</p>
+          <div className="w-[150px] flex flex-col items-start justify-between">
+            <div className="">
+              <p className="italic font-medium line-clamp-1">
+                {currentPlayback.trackName}
+              </p>
+              <p className="line-clamp-1">{currentPlayback.artist}</p>
+            </div>
+            <div className="flex items-center space-x-2 pb-1">
+              <p className="text-xs font-mono  text-muted-foreground">
+                live on{" "}
+              </p>
+              <Image
+                src={SpotifyLogo}
+                alt="Spotify Logo"
+                width={12}
+                height={12}
+                className="pt-0.5"
+                draggable={false}
+              />
+            </div>
           </div>
         </div>
       )}

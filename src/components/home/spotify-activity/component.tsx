@@ -10,7 +10,7 @@ const SpotifyActivity = async () => {
   const { currentPlayback, topArtists } = await getSpotifyData();
 
   return (
-    <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between md:space-x-4 pl-3 pr-6">
+    <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between md:space-x-4 mt-2 pl-3 pr-6">
       {currentPlayback && (
         <div className="flex gap-2 bg-white/50 dark:bg-black/25 border p-2 rounded-sm min-w-fit">
           <div className="relative w-24 h-24 flex-shrink-0 rounded-sm overflow-hidden">

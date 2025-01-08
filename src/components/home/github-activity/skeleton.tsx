@@ -2,7 +2,7 @@ import React from "react";
 
 const GitHubActivitySkeleton = () => {
   return (
-    <div className="flex not-prose font-mono text-xs sm:text-sm items-center justify-between p-2 mx-3 rounded border bg-card">
+    <div className="flex not-prose mt-2 font-mono text-xs sm:text-sm items-center justify-between p-2 mx-3 rounded border bg-white/50 dark:bg-black/25">
       <div className="flex space-x-2 items-center">
         {/* Avatar skeleton */}
         <div className="w-8 h-8 bg-gray-200/40 rounded-full animate-pulse" />

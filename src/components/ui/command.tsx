@@ -15,7 +15,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={cn(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-gradient-to-r from-brand-gradient-from/75 dark:from-brand-gradient-from/50 via-brand-gradient-via/70 dark:via-brand-gradient-via/50 to-brand-gradient-to/80 dark:to-brand-gradient-to/50 text-popover-foreground",
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-gradient-to-r from-brand-gradient-from/75 dark:from-brand-gradient-from/50 to-brand-gradient-to/80 dark:to-brand-gradient-to/50 text-popover-foreground",
       className
     )}
     {...props}
@@ -111,7 +111,7 @@ CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 const CommandItem = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>
->(({ className, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
@@ -119,7 +119,9 @@ const CommandItem = React.forwardRef<
       className
     )}
     {...props}
-  />
+  >
+    <p className="pl-2">{children}</p>
+  </CommandPrimitive.Item>
 ));
 
 CommandItem.displayName = CommandPrimitive.Item.displayName;

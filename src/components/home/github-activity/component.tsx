@@ -14,7 +14,7 @@ const GitHubActivity = async ({ user }: GitHubActivityProps) => {
   const data = (await getGitHubActivity(user))!;
 
   return (
-    <div className="flex not-prose font-mono text-xs sm:text-sm items-center justify-between p-2 mx-3 rounded border bg-card">
+    <div className="flex not-prose font-mono mt-2 text-xs sm:text-sm items-center justify-between p-2 mx-3 rounded border bg-white/50 dark:bg-black/25">
       <div className="flex space-x-2 items-center">
         <Image
           src={data.user.avatarUrl}

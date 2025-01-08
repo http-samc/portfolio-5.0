@@ -25,7 +25,7 @@ const RemoteMarkdown = async ({
     <div
       className={cn(
         {
-          "prose dark:prose-invert prose-a:dark:text-purple-400 prose-a:text-purple-800 prose-a:decoration-dotted prose-a:underline-offset-2":
+          "prose dark:prose-invert prose-a:dark:text-purple-400 prose-a:text-purple-800 prose-a:decoration-underline prose-a:underline-offset-2":
             prose,
         },
         className

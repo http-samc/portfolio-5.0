@@ -33,7 +33,7 @@ const Hero = ({ location }: HeroProps) => {
   }, []);
 
   return (
-    <div className="flex flex-col md:pt-3 min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
+    <div className="flex flex-col pt-3 min-h-[calc(100vh-4.5rem)] sm:min-h-fit sm:flex-row space-y-12 sm:space-y-0 sm:space-x-8 relative">
       <div className="sm:w-4/5">
         <h1 className="text-5xl sm:text-4xl leading-tight font-extrabold">
           <Balancer>
@@ -88,16 +88,19 @@ const Hero = ({ location }: HeroProps) => {
         </p>
       </div>
       <div className="flex justify-center">
-        <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">
-          <div className="absolute w-full h-full brand-gradient-bg -z-10 top-0 left-0 group-hover:scale-150 transition-all"></div>
-          <Image
-            className="w-44 h-44 object-contain"
-            src={Headshot}
-            alt="Headshot of Samarth Chitgopekar"
-            placeholder="blur"
-            draggable={false}
-            priority
-          />
+        <div className="relative group h-fit">
+          <div className="absolute rounded-full -inset-2 group-hover:scale-[102%] transition-transform -z-10 bg-gradient-to-l from-sky-400 to-indigo-400 dark:from-sky-700 dark:to-indigo-600 blur"></div>
+          <div className="w-44 h-44 p-4 rounded-full overflow-hidden relative group">
+            <div className="absolute w-full h-full rounded-full -z-[1] brand-gradient-bg top-0 left-0 group-hover:scale-150 transition-all"></div>
+            <Image
+              className="w-44 h-44 object-contain"
+              src={Headshot}
+              alt="Headshot of Samarth Chitgopekar"
+              placeholder="blur"
+              draggable={false}
+              priority
+            />
+          </div>
         </div>
       </div>
       <DotGrid />

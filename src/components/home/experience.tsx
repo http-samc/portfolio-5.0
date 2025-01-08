@@ -33,7 +33,13 @@ const Experience = ({
         className="relative w-12 aspect-square rounded-lg overflow-hidden"
         style={styles}
       >
-        <Image src={logoUrl} alt={company} fill draggable={false} />
+        <Image
+          src={logoUrl}
+          alt={company}
+          fill
+          sizes="20vw"
+          draggable={false}
+        />
       </div>
       <div className="flex flex-col justify-start">
         <p className="dark:text-gray-200 text-gray-700 font-semibold">

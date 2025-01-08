@@ -36,9 +36,7 @@ const getAccessToken = async () => {
   return accessToken;
 };
 
-export async function getSpotifyData(isRetry: boolean = false) {
-  client.setAccessToken(await getAccessToken());
-
+export async function getSpotifyData() {
   const getCurrentPlayback = async () => {
     let track: SpotifyApi.TrackObjectFull;
 
@@ -68,7 +66,9 @@ export async function getSpotifyData(isRetry: boolean = false) {
     }));
   };
 
-  try {
+  if (process.env.SPOTIFY_REFRESH_TOKEN) {
+    client.setAccessToken(await getAccessToken());
+
     const [currentPlayback, topArtists] = await Promise.all([
       getCurrentPlayback(),
       getTopArtists(),
@@ -78,13 +78,7 @@ export async function getSpotifyData(isRetry: boolean = false) {
       currentPlayback,
       topArtists,
     };
-  } catch (error: any) {
-    // Recursively retry once if the token is expired
-    if (error.statusCode === 401 && !isRetry) {
-      return await getSpotifyData(true);
-    } else {
-      console.error("Error fetching Spotify data:", error);
-      throw error;
-    }
+  } else {
+    throw new Error("No Spotify refresh token found");
   }
 }

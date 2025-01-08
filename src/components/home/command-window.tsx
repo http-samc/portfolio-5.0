@@ -8,8 +8,6 @@ import {
 import React from "react";
 import { getFirstPageByType } from "@/lib/queries";
 import RemoteMarkdown from "@components/ui/remote-markdown";
-import { getSpotifyData } from "@/lib/spotify";
-import SpotifyActivity from "./spotify-activity";
 
 const CommandWindow = async () => {
   const home = (await getFirstPageByType("home"))!;

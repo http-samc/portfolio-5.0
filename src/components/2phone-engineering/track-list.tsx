@@ -21,7 +21,9 @@ const TrackList = () => {
       id="track-list"
       className="flex-col gap-2 hidden lg:flex bg-gray-100/20 divide-y divide-gray-500 backdrop-blur-sm p-6 rounded"
     >
-      <h3 className="text-xl text-gray-700 font-old-english">l'ensemble</h3>
+      <h3 className="text-xl text-black font-black tracking-wide font-serif">
+        l'ensemble
+      </h3>
       <ul className="gap-4 pt-4 flex flex-col">
         {mixes.map(({ title, src }, idx) => (
           <li key={`mix-${idx + 1}`}>
@@ -59,7 +61,7 @@ const TrackList = () => {
                     })}
                   />
                   <Pause
-                    className={cn("w-4 hidden", {
+                    className={cn("w-4 hidden animate-pulse", {
                       block: currentMixIdx === idx && audioState === "playing",
                     })}
                   />
